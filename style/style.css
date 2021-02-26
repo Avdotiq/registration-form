@@ -1,0 +1,148 @@
+p, a {
+    font-family: Roboto;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+}
+
+/*TABS*/
+
+.form-wrapper {
+    width: 504px;
+    margin: auto;
+    box-shadow: 0px 0px 6px rgba(183, 183, 183, 0.32);
+    border-radius: 4px;
+}
+
+#tabs-1, #tabs-2 {
+    padding: 0 32px 32px;
+}
+
+ul {
+    display: flex;
+}
+
+li {
+    list-style: none;
+    width: 50%;
+    text-align: center;
+}
+
+li a{
+    text-decoration: none;
+    text-align: center;
+    line-height: 48px;
+    display: block;
+    font-size: 14px;
+    color: #576A75;
+}
+
+li.ui-tabs-active {
+    border-bottom: 1px solid #EFF2F7;
+    background: #FFFFFF;
+}
+
+.ui-state-default {
+    background: #EFF2F7;
+    border-radius: 0px 4px 0px 0px;
+}
+
+/*FORM*/
+
+form {
+    text-align: center;
+}
+
+.col-1, .col-2 {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.col-2 {
+    position: relative;
+}
+
+.col-2 img {
+    position: absolute;
+    top: 56px;
+    right: 8px;
+}
+
+label, input {
+    font-family: Roboto;
+    font-size: 12px;
+}
+
+label {
+    color: #1C1C1C;
+    padding: 24px 0 8px 0;
+}
+
+input {
+    height: 16px;
+    padding: 8px 16px;
+    line-height: 14px;
+    color: #8A979F;
+    border: 1px solid #CED4DA;
+    border-radius: 2px;
+}
+
+input:focus {
+    outline: none;
+}
+
+.forgot-pass {
+    display: block;
+    margin-top: 16px;
+    font-size: 12px;
+    color: #00719C;
+    text-decoration: none;
+    text-align: left;
+}
+
+.btn {
+    width: 184px;
+    height: 32px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: -0.01em;
+    color: #FFFFFF;
+    background: #00B9FF;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.14);
+    border-radius: 2px;
+    margin-top: 24px;
+    border: none;
+}
+
+/*ERROR MESSAGE*/
+
+.error {
+    display: none;
+}
+
+.error-show {
+    display: inherit;
+    font-family: Roboto;
+    font-size: 12px;
+    color: #F96D63;
+    margin-top: 8px;
+}
+
+/*PLACEHOLDER*/
+
+.input-error {
+    border: 1px solid #F96D63;
+    border-radius: 4px;
+}
+
+.input-error::-moz-placeholder {
+    color: #F96D63;
+}
+
+.input-error::-webkit-input-placeholder {
+    color: #F96D63;
+}

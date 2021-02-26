@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Registration form</title>
+    <link rel="stylesheet" href="style/reset.css">
+	<link rel="stylesheet" href="style/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="tabs" class="form-wrapper">
+        <ul class="form-tabs">
+          <li><a class="tab-link" href="#tabs-1">Вход</a></li>
+          <li><a class="tab-link" href="#tabs-2">Регистрация</a></li>
+        </ul>
+        <div id="tabs-1">
+            <form name="login" action="#">
+                <div class="col-1">
+                    <label>Введите E-mail</label>
+                    <input class="input" type="email" name="email" placeholder="E-mail" required>
+                    <lable class="error"></lable>
+                </div>
+                <div class="col-2">
+                    <label>Введите пароль</label>
+                    <img src="img/show-pass.png" alt="" title="Показать пароль" id="show-pass">
+                    <input class="pass-inp input" type="password" name="password" placeholder="Пароль" minlength="8" required>
+                    <lable class="error"></lable>
+                </div>
+                <a href="#" title="Забыли пароль?" class="forgot-pass">Забыли пароль?</a>
+                <input class="btn" type="submit" value="Войти">
+            </form>
+        </div>
+        <div id="tabs-2">
+          <p>Регистрация</p>
+        </div>
+      </div>
+      <script type="text/javascript" src="script/script.js"></script>
+      <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+      <script>
+        $( function() {
+            var tabs = $( "#tabs" ).tabs();
+            tabs.find( ".ui-tabs-nav" ).sortable({
+                axis: "x",
+                stop: function() {
+                    tabs.tabs( "refresh" );
+                }
+            });
+        } );
+        </script>
+</body>
+</html>
