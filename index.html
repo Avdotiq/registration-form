@@ -16,24 +16,62 @@
           <li><a class="tab-link" href="#tabs-2">Регистрация</a></li>
         </ul>
         <div id="tabs-1">
-            <form name="login" action="#">
-                <div class="col-1">
+            <form name="login">
+                <div class="col-1 col">
                     <label>Введите E-mail</label>
                     <input class="input" type="email" name="email" placeholder="E-mail" required>
                     <lable class="error"></lable>
                 </div>
-                <div class="col-2">
+                <div class="col-2 col">
                     <label>Введите пароль</label>
-                    <img src="img/show-pass.png" alt="" title="Показать пароль" id="show-pass">
+                    <img src="img/show-pass.png" alt="" title="Показать пароль" class="show-pass">
                     <input class="pass-inp input" type="password" name="password" placeholder="Пароль" minlength="8" required>
                     <lable class="error"></lable>
                 </div>
                 <a href="#" title="Забыли пароль?" class="forgot-pass">Забыли пароль?</a>
-                <input class="btn" type="submit" value="Войти">
+                <input class="btn" type="submit" value="Войти" onclick="Login()">
             </form>
         </div>
         <div id="tabs-2">
-          <p>Регистрация</p>
+          <form name="registration">
+            <div class="col-1 col">
+                <label>Введите E-mail</label>
+                <input class="input" type="email" name="email" placeholder="E-mail" required>
+                <lable class="error"></lable>
+            </div>
+            <div class="col-2 col">
+                <label>Введите телефон</label>
+                <input class="input" type="tel" pattern="^(\+375|80)(29|25|44|33)(\d{3})(\d{2})(\d{2})$" name="phone" placeholder="Телефон" value="+375"required>
+                <lable class="error"></lable>
+            </div>
+            <div class="col-3 col">
+                <label>Введите пароль</label>
+                <img src="img/show-pass.png" alt="" title="Показать пароль" class="show-pass">
+                <input class="pass-inp input" type="password" name="password" placeholder="Пароль" minlength="8" required>
+                <lable class="error"></lable>
+            </div>
+            <div class="col-4 col">
+                <label>Повторите пароль</label>
+                <img src="img/show-pass.png" alt="" title="Показать пароль" class="show-pass">
+                <input class="pass-inp input" type="password" name="reppassword" placeholder="Пароль" required>
+                <lable class="error"></lable>
+            </div>
+            <div class="col-5 col">
+                <label>Выберите регион</label>
+                <select id="select" name="country" required>
+                    <option value="" disabled selected style='display:none;'>Выберите регион</option>
+                    <option value="belarus">Беларусь</option>
+                    <option value="russia">Россия</option>
+                    <option value="kazakhstan">Казахстан</option>
+                  </select>
+                  <lable class="error"></lable>
+            </div>
+            <div class="checkbox">
+                <input type="checkbox" name="accept" id="check" required><label for="check">Примите <a href="#" class="accept">пользовательское соглашение</a></label>
+                <lable class="error" id="err-check">Вы должны принять условия пользовательского соглашения</lable>
+            </div>
+            <input class="btn" type="submit" value="Зарегистрироваться" onclick="Submit()">
+          </form>
         </div>
       </div>
       <script type="text/javascript" src="script/script.js"></script>
