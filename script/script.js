@@ -123,7 +123,8 @@ function Submit() {
     if (regForm.checkValidity()) {
         alert('Valid !');
         let user = setUser(regForm.elements.email.value, regForm.elements.phone.value, regForm.elements.password.value, regForm.elements.country.value);
-        console.log(user);
+        Users.push(user);
+        console.log(Users);
         regForm.reset();         
     } else {
         let messEr = document.getElementById("err-check");

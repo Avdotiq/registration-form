@@ -169,7 +169,7 @@ input:focus {
     align-items: center;
     justify-content: center;
     position: absolute;
-    background-image: url(/img/Union.png);
+    background-image: url(https://avdotiq.github.io/registration-form/img/Union.png);
     color: #FFFFFF;
     width: 154px;
     height: 24px;
@@ -229,7 +229,7 @@ input:focus {
 	width:16px;
 	height:16px;
 	background-color:#ffffff;
-    background-image: url("/img/checked.png");
+    background-image: url(https://avdotiq.github.io/registration-form/img/checked.png);
     background-position: center;
     background-size: auto;
     background-repeat: no-repeat;
