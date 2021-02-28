@@ -9,6 +9,8 @@ p, a {
 
 body {
     height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 
@@ -17,7 +19,8 @@ body {
 .form-wrapper {
     width: 504px;
     margin: auto;
-    box-shadow: 0px 0px 6px rgba(183, 183, 183, 0.32);
+    -webkit-box-shadow: 0px 0px 6px rgba(183, 183, 183, 0.32);
+            box-shadow: 0px 0px 6px rgba(183, 183, 183, 0.32);
     border-radius: 4px;
 }
 
@@ -26,6 +29,8 @@ body {
 }
 
 ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 
@@ -61,8 +66,13 @@ form {
 }
 
 .col {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     text-align: left;
     position: relative;
 }
@@ -143,7 +153,8 @@ input:focus {
     letter-spacing: -0.01em;
     color: #FFFFFF;
     background: #00B9FF;
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.14);
+    -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.14);
+            box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.14);
     border-radius: 2px;
     margin-top: 24px;
     border: none;
@@ -165,9 +176,15 @@ input:focus {
 }
 
 .mess {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     position: absolute;
     background-image: url(https://avdotiq.github.io/registration-form/img/Union.png);
     color: #FFFFFF;
@@ -221,7 +238,8 @@ input:focus {
 	position:absolute;
 	top:0;
 	left:0;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 .checkbox input[type=checkbox]:checked + label:after {
 	border: 1px solid #CED4DA;
@@ -233,5 +251,6 @@ input:focus {
     background-position: center;
     background-size: auto;
     background-repeat: no-repeat;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
