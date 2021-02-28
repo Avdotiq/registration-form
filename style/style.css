@@ -190,6 +190,7 @@ input:focus {
 .input-error {
     border: 1px solid #F96D63;
     border-radius: 4px;
+    color: #F96D63;
 }
 
 .input-error::-moz-placeholder {

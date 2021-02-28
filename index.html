@@ -25,8 +25,8 @@
                 <div class="col-2 col">
                     <label>Введите пароль</label>
                     <img src="img/show-pass.png" alt="" title="Показать пароль" class="show-pass">
-                    <input class="pass-inp input" type="password" name="password" placeholder="Пароль" minlength="8" required>
-                    <lable class="error"></lable>
+                    <input class="pass-inp input" type="password" name="password" placeholder="Пароль" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$" required>
+                    <lable class="error" style="right: 30px;"></lable>
                 </div>
                 <a href="#" title="Забыли пароль?" class="forgot-pass">Забыли пароль?</a>
                 <input class="btn" type="submit" value="Войти" onclick="Login()">
@@ -47,14 +47,14 @@
             <div class="col-3 col">
                 <label>Введите пароль</label>
                 <img src="img/show-pass.png" alt="" title="Показать пароль" class="show-pass">
-                <input class="pass-inp input" type="password" name="password" placeholder="Пароль" minlength="8" required>
-                <lable class="error"></lable>
+                <input class="pass-inp input" type="password" name="password" placeholder="Пароль" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$" required>
+                <lable class="error" style="right: 30px;"></lable>
             </div>
             <div class="col-4 col">
                 <label>Повторите пароль</label>
                 <img src="img/show-pass.png" alt="" title="Показать пароль" class="show-pass">
                 <input class="pass-inp input" type="password" name="reppassword" placeholder="Пароль" required>
-                <lable class="error"></lable>
+                <lable class="error" style="right: 30px;"></lable>
             </div>
             <div class="col-5 col">
                 <label>Выберите регион</label>

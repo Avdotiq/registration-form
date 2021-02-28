@@ -4,8 +4,10 @@ let allInp = document.getElementsByClassName("input");
 let tabLinks = document.getElementsByClassName("tab-link");
 let error = document.getElementsByClassName("error");
 let message = document.getElementsByClassName("mess");
+let Users = [];
 let form = document.forms.login;
 let regForm = document.forms.registration;
+let repPas = regForm.elements.reppassword;
 
 document.addEventListener( "DOMContentLoaded", function() {
     for (i=0; i<btnShowPass.length; i++) {
@@ -63,55 +65,69 @@ function isValidate() {
     mess = el.nextElementSibling;
     let p1 = regForm.elements.password.value;
     let p2 = regForm.elements.reppassword.value;
+    let repPas = regForm.elements.reppassword;
     if (el.validity.value) {
         el.classList.remove("input-error");
     }
     if (el.validity.valueMissing) {
-        console.log("no value");
         el.classList.add("input-error");
         el.setCustomValidity("Обязательное поле");
         mess.innerHTML = "oбязательное поле";
         mess.classList.add("mess");
     }
     if (el.validity.typeMismatch) {
-        console.log("miss match");
         el.classList.add("input-error");
         el.setCustomValidity("Некорректный формат");
         mess.innerHTML = "некорректный формат";
         mess.classList.add("mess");
     }
-    if (el.validity.patternMismatch) {
+    if (el.validity.patternMismatch && el.name === "phone") {
         el.classList.add("input-error");
         el.setCustomValidity("Некорректный номер");
         mess.innerHTML = "некорректный номер";
         mess.classList.add("mess");
     }
-    if (el.validity.tooShort) {
-        el.classList.add("input-error");
-        el.setCustomValidity("Не меньше 8 символов");
-        mess.innerHTML = "не меньше 8 символов";
-        mess.classList.add("mess");
+    if (el.name === "password" && el.value) {
+        if (el.validity.patternMismatch) {
+            el.classList.add("input-error");
+            el.reportValidity();
+            el.setCustomValidity("Пароль должен содержать не мение 8 символов, как минимум 1 цифру, 1 заглавную и 1 прописную букву");
+        }
+        if (!el.validity.patternMismatch) {
+            el.reportValidity(true);
+        }
     }
-    if (p2 && p1 !== p2 && p2 === "") {
-        let messEr = regForm.elements.reppassword;
-        messEr.classList.add("input-error");
-        messEr.setCustomValidity("Пароли не совпадают");
+    if (repPas.value && p1 !== p2 && el.name === "reppassword") {
+        repPas.reportValidity();
+        repPas.classList.add("input-error");
         mess.innerHTML = "пароли не совпадают";
         mess.classList.add("mess");
     }
+    if (repPas.value && p1 === p2 && el.name === "reppassword") {
+        repPas.reportValidity(true);
+        repPas.classList.remove("input-error");
+        mess.classList.remove("mess");
+    }
 }
 
-function ischeckbox() {
-    let messEr = document.getElementById("err-check");
-    messEr.classList.add("error-show");
+function setUser(email, phone, password, country) {
+    return {
+        email,
+        phone,
+        password,
+        country,
+    };
 }
 
 function Submit() { 
     if (regForm.checkValidity()) {
-            alert('Valid !');
-            return true;
+        alert('Valid !');
+        let user = setUser(regForm.elements.email.value, regForm.elements.phone.value, regForm.elements.password.value, regForm.elements.country.value);
+        console.log(user);
+        regForm.reset();         
     } else {
-        ischeckbox();
+        let messEr = document.getElementById("err-check");
+        messEr.classList.add("error-show");
         return false;
     }
 }
